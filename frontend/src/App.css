@@ -1,0 +1,398 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Bangers&family=Fira+Sans+Condensed&family=Nunito+Sans:wght@300&family=Permanent+Marker&family=Poppins:wght@200;500&family=Road+Rage&family=Roboto:wght@500&display=swap');* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+
+/* STYLES FOR HEADER */
+
+
+div.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgb(82,116,217);
+background: linear-gradient(90deg, rgba(82,116,217,1) 0%, rgba(126,61,217,1) 100%, rgba(171,168,168,1) 100%);
+  width: 100%;
+  height: 7vh;
+  padding-left: 0.7rem;
+  padding-right: 1.5rem;
+}
+
+.logoutSvg {
+  fill: white;
+  background-color: rgba(179, 176, 176, 0.268);
+  background-position: center;
+  background-size: contain;
+  padding: 7px;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+div.userNameContainer {
+  height: 4vh;
+  background-color: #f6d5ee3c;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 1.5rem;
+}
+
+
+
+/* STYLES FOR LOGIN */
+
+
+div.formContainer {
+  background-image: url("./assets/background-for-web.png");
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.robotImage {
+  border: 3.5px solid #7979794b;
+}
+
+div.formContainer > div:nth-child(1) {
+  padding-left: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 30%;
+  height: 80%;
+}
+
+div.formContainer div.imageContainer {
+  display: flex;
+  flex-direction: column;
+  
+  justify-content: flex-start;
+  height: 60%;
+}
+
+form.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 30%;
+  width: 70%;
+}
+
+div.inputContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+div.inputContainer div.titleInput {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+div.inputContainer div p {
+  text-align: end;
+}
+
+div.divToInput {
+  width: 100%!important;
+  height: 38px;
+  margin-left: 10px;
+  border: 1px solid #d6dbf5;
+  
+}
+
+div.divToInputError {
+  border: 2px solid #CB1A35;
+}
+
+div.divToInputOk {
+  border: 2px solid #00C5C8;
+}
+
+.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #CB1A35;
+  position: relative;
+  left: 92%;
+  bottom: 2rem;
+  border-radius: 100px;
+  width: 30px!important;
+  height: 30px!important;
+  padding: 2px;
+}
+
+.noError {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #00C5C8;
+  position:sticky;
+  left: 92%;
+  bottom: 2rem;
+  border-radius: 100px;
+  width: 30px!important;
+  height: 30px!important;
+  padding: 2px;
+}
+
+div.inputContainer input {
+  width: 100%;
+  height: 35px;
+  border: none;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  outline: none;
+  z-index: 100000;
+}
+
+button.buttonLogin {
+  background-color: #f50f78;
+  color: white;
+  font-weight: 600;
+  border-radius: 25px;
+  padding: 15px 30px 15px 30px;
+  cursor: pointer;
+  width: 45%;
+  border: none;
+  letter-spacing: 1px;
+}
+
+
+
+/* STYLES FOR TABLE */
+
+
+div .container {
+  width: 100vw;
+  height: 93vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div .highscoreContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 60%;
+}
+
+table {
+  border-collapse:collapse;
+}
+
+.highScore {
+  border: 3px solid #F2A20C;
+  width: 100%;
+  height: 80%;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0px 0px 24px 0px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 0px 0px 24px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 24px 0px rgba(0,0,0,0.75);
+}
+
+.highScore thead {
+  background-color: #A64D2D;
+}
+
+.highScore tbody {
+  background-color: #F2A20C;
+}
+
+.highScore tbody tr:hover {
+  background-color: #F28E13;
+}
+
+
+/* STYLES FOR DETAILS CAMPAIGNS  */
+
+.checkSvg .cls-2 {
+  fill: #C4C6EA;
+}
+
+h3.detailTitle{
+  margin-left: 1.5rem;
+  font-weight: 700;
+  color: #EE156D;
+  letter-spacing: 1px;
+}
+
+div.detailCampaignContainer {
+  width: 100%;
+  height: 27vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 1rem;
+}
+
+div.detailCampaignContainer > div:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 45%;
+}
+
+div.campaignAverageContainer {
+  background-color: #049DD9;
+  height: 4vh;
+  margin: 0 1.5rem 0 1.5rem;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+span.campaignTitle {
+  margin-left: 1rem;
+  color: white;
+  font-weight: normal;
+  letter-spacing: 1px;
+}
+
+div.averageContain {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  
+}
+
+div.averageContain h4 {
+  color: white;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.averageContain h4 span {
+  font-weight: lighter;
+}
+
+div.campaignsContainer {
+  display: flex;
+  padding: 0 1.5rem 0 1.5rem;
+  justify-content: space-between;
+  width: 100%;
+  gap: 1.3rem;
+  height: 45%;
+}
+
+div.campaignsContainer > div {
+  width: 14.28%;
+  
+}
+
+
+div.campaignsContainer > div.detailsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.campaignsContainer > div > span {
+  align-self: center;
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+.campaignsContainer > div > span.quantityNumber-1 {
+  color: #437ADF;
+}
+
+.campaignsContainer > div > span.quantityNumber-2 {
+  color: #00C4CA;
+}
+
+.campaignsContainer > div > span.quantityNumber-3 {
+  color: #8B51E9;
+}
+
+.campaignsContainer > div > span.quantityNumber-4 {
+  color: #F28705;
+}
+
+.campaignsContainer > div > span.quantityNumber-5 {
+  color: #0399D1;
+}
+
+.campaignsContainer > div > span.quantityNumber-6 {
+  color: #C41A35;
+}
+
+.campaignsContainer > div > span.quantityNumber-7 {
+  color: #F70C7B;
+}
+
+.campaignsContainer > div > p {
+  color: #8E9099;
+  text-align: center;
+}
+
+
+div.campaignsContainer > div > div {
+  height: 8px;
+  border-radius: 15px;
+}
+
+.underline-1 {
+  border: 4px solid #437ADF
+}
+
+.underline-2 {
+  border: 4px solid #00C4CA
+}
+
+.underline-3 {
+  border: 4px solid #8B51E9
+}
+
+.underline-4 {
+  border: 4px solid #F28705
+}
+
+.underline-5 {
+  border: 4px solid #0399D1
+}
+
+.underline-6 {
+  border: 4px solid #C41A35
+}
+
+.underline-7 {
+  border: 4px solid #F70C7B
+}
+
+
+
+
+
+
+
+
+/* .logoHeader path.st0, path.st1, path.st2, path.st3, path.st4, polygon.st5, path.st6, path.st7 {
+  fill: white;
+ 
+ }
+
+ .logoOnDetails {
+   stroke: black;
+   stroke-width: 20px;
+ } */
+
+
+
