@@ -1,4 +1,5 @@
 import express from "express"
+import path from "path"
 const cors = require("cors")
 require("dotenv").config()
 const router = require("./routes/index")
@@ -13,5 +14,13 @@ app.use(morgan("dev"))
 app.use("/api", router)
 
 
-app.listen(4000, ()=> console.log("Sever is running"))
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('client/build'))
+    app.get('*', (req, res) => {
+      res.sendFile(path.join(__dirname + '/client/build/index.html'))
+    })
+  }
+  
+app.listen(process.env.PORT || '0.0.0.0', () => console.log(`Server running on port ${process.env.PORT}`))
+  
 

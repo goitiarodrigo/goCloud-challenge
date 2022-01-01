@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.7039e7c1.css",
+    "main.js": "/static/js/main.ace682e1.js",
+    "static/media/background-for-web.png": "/static/media/background-for-web.bc1b5cdb76343e0fc365.png",
+    "static/media/gc-robot.svg": "/static/media/gc-robot.8856ba73687059e1a4525f3cb409f6d8.svg",
+    "static/media/gc-logo-default.svg": "/static/media/gc-logo-default.e4963387ec356fdefd77d792a1f97e08.svg",
+    "index.html": "/index.html",
+    "main.7039e7c1.css.map": "/static/css/main.7039e7c1.css.map",
+    "main.ace682e1.js.map": "/static/js/main.ace682e1.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7039e7c1.css",
+    "static/js/main.ace682e1.js"
+  ]
+}
