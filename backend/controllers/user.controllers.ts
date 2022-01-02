@@ -101,4 +101,4 @@ const userControllers = {
     }
 }
 
-export default userControllers
+module.exports = userControllers

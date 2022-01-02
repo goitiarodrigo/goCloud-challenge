@@ -1,6 +1,6 @@
-import userControllers from "../controllers/user.controllers"
+const userControllers = require("../controllers/user.controllers")
 
-const express= require("express")
+const express = require("express")
 const router = express.Router()
 
 
