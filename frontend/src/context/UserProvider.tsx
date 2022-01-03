@@ -8,7 +8,7 @@ interface props {
     children: JSX.Element | JSX.Element[]
 }
 
-const URL = "http://localhost:4000/api"
+const URL = "https://gocloud-omni.herokuapp.com/api"
 
 export const UserProvider = ({children}: props) => {
 
