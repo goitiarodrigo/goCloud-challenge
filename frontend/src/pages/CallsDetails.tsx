@@ -42,8 +42,6 @@ const CallsDetails = () => {
                 <div className="bubble" style={{background: "#6791CA", borderColor: "#6791CA"}} ><p style={{color: "white"}}>¡Bienvenido otra vez!</p></div>
                 <img src="https://i.postimg.cc/cL0WKf91/robot-loader.gif" alt="loader" />
             </div>
-            
-            
         )
     }
 
@@ -53,7 +51,7 @@ const CallsDetails = () => {
             <Header />
             <AboutAllCalls calls={calls!}/>
             <div className="tableContainer">
-                <table className="highScore">
+                <table className="table">
                     <thead>
                         <tr>
                             <th >TELÉFONO </th>

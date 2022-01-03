@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.fdc2cfa9.css",
-    "main.js": "/static/js/main.83cde35f.js",
+    "main.css": "/static/css/main.56fc5aa2.css",
+    "main.js": "/static/js/main.b572c3ff.js",
     "static/media/background-for-web.png": "/static/media/background-for-web.5e594413770313bdef4a.png",
     "static/media/gc-robot.svg": "/static/media/gc-robot.8856ba73687059e1a4525f3cb409f6d8.svg",
     "static/media/gc-logo-default.svg": "/static/media/gc-logo-default.e4963387ec356fdefd77d792a1f97e08.svg",
@@ -18,11 +18,11 @@
     "static/media/chevronLeft.svg": "/static/media/chevronLeft.7b0585b02065883d6d997895a545a37c.svg",
     "static/media/gc-icon_waiting.svg": "/static/media/gc-icon_waiting.77d4cbb97af684c7309a7b20e9a0a569.svg",
     "index.html": "/index.html",
-    "main.fdc2cfa9.css.map": "/static/css/main.fdc2cfa9.css.map",
-    "main.83cde35f.js.map": "/static/js/main.83cde35f.js.map"
+    "main.56fc5aa2.css.map": "/static/css/main.56fc5aa2.css.map",
+    "main.b572c3ff.js.map": "/static/js/main.b572c3ff.js.map"
   },
   "entrypoints": [
-    "static/css/main.fdc2cfa9.css",
-    "static/js/main.83cde35f.js"
+    "static/css/main.56fc5aa2.css",
+    "static/js/main.b572c3ff.js"
   ]
 }
