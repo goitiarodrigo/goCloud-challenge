@@ -14,6 +14,7 @@ export const userReducer = (state: user, action: propsActions) => {
                 ...state,
                 id: action.payload.dataUser.id,
                 email: action.payload.dataUser.email,
+                name: action.payload.dataUser.name,
                 token: action.payload.dataUser.token
             }
         case "LOGOUT":

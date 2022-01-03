@@ -1,37 +1,28 @@
-import { FormEvent, useContext } from "react"
-import { UserContext } from "../context/UserContext"
 
+import ReactTooltip from "react-tooltip"
 import { ReactComponent as Error } from "../assets/cross.svg"
 import { ReactComponent as Check } from "../assets/gc-icon_check.svg"
-import { useNavigate } from "react-router-dom"
+
 import useForm from "../hooks/useForm"
 
 
 const FormLogin = () => {
 
-    const { signIn } = useContext(UserContext)
-    const navigate = useNavigate()
-
-    
-    const { logUser, handleCheckInput, handleEntryUser, classForInput } = useForm()
-
-    const handleLogUser = async (e: FormEvent<HTMLFormElement>) => {
-        e.preventDefault()
-        let res = await signIn(logUser)
-        if (!res.success) console.log(res.response)
-        navigate("/details")
-    }
+    const { logUser, handleCheckInput, handleEntryUser, classForInput, inputStatusContent, handleLogUser, error } = useForm()
+    const { email, password } = classForInput
 
 
     return (
         <>
+            {inputStatusContent.email === "error" ? <ReactTooltip place="right" type="error" effect="solid" id="error">{error ? "Email o contraseña incorrecta" : "Debe completar este campo"}</ReactTooltip> : null}
+            {inputStatusContent.password === "error" ? <ReactTooltip place="right" type="error" effect="solid" id="error">{error ? "Email o contraseña incorrecta" : "Debe completar este campo"}</ReactTooltip> : null}
             <form className="form" onSubmit={handleLogUser}>
                 <div className="inputContainer">
                     <div className="titleInput"><span><p>Correo</p>electrónico</span></div>
-                    <div className={classForInput.email}>
+                    <div className={email}>
                         <input type="email" name="email" value={logUser.email} onChange={handleEntryUser} onBlur={handleCheckInput}/>
-                        <div className={classForInput.email === "divToInputError" ? "error" : classForInput.email === "divToInputOk" ? "notError" : ""}>
-                            {classForInput.email === "divToInputError" ? <Error width={20} /> : classForInput.email === "divToInputOk" ? <Check width={20} className="checkForInput"/> : null}
+                        <div  className={inputStatusContent.email} data-tip data-for="error">
+                            {email === "divToInputError" ? <Error width={20} /> : email === "divToInputOk" ? <Check width={20} className="checkForInput"/> : null}
                         </div>
                         
                     </div>
@@ -40,11 +31,12 @@ const FormLogin = () => {
                     <div className="titleInput">
                         <p>Contraseña</p>
                     </div>
-                    <div className={classForInput.password}>
+                    <div className={password}>
                         <input type="password" name="password" value={logUser.password} onChange={handleEntryUser} onBlur={handleCheckInput}/>
-                        <div className={classForInput.password === "divToInputError" ? "error" : classForInput.password === "divToInputOk" ? "notError" : ""}>
-                            {classForInput.password === "divToInputError" ? <Error width={20} /> : classForInput.password === "divToInputOk" ? <Check width={20} className="checkForInput"/> : null}
+                        <div  className={inputStatusContent.password} data-tip data-for="error">
+                            {password === "divToInputError" ? <Error width={20} /> : password === "divToInputOk" ? <Check width={20} className="checkForInput"/> : null}
                         </div>
+                        
                     </div>
                 </div>
                 <button className="buttonLogin">INGRESAR</button>

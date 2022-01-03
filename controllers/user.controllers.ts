@@ -51,7 +51,9 @@ const userControllers = {
 
             user.authenticateUser(authDetails, {
                 onSuccess:  (data) => {
-                res.json({success: true, response: {dataUser: {token: data.getIdToken().getJwtToken(), email: data.getIdToken().payload.email, id: data.getIdToken().payload.aud}}})},
+                    const { payload } = data.getIdToken()
+                    const { email, aud, name } = payload
+                res.json({success: true, response: {dataUser: {token: data.getIdToken().getJwtToken(), email, id: aud, name}}})},
                 onFailure: async (err) => {
                     let error: {code: "", name: "", message: ""} = await err
                     res.json({success: false, response: error.message})
@@ -61,7 +63,6 @@ const userControllers = {
                     let dataUser = await data
                    res.json({response: dataUser})
                 }
-                
             })
     },
 

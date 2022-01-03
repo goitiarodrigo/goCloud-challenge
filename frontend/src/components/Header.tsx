@@ -5,7 +5,7 @@ import { UserContext } from "../context/UserContext"
 
 const Header = () => {
 
-    const { logOut } = useContext(UserContext)
+    const { logOut, userState: { name } } = useContext(UserContext)
 
     return (
         <div>
@@ -14,7 +14,7 @@ const Header = () => {
                 <ReactLogOut  className="logoutSvg" onClick={logOut} style={{cursor: "pointer"}}/>
             </div>
             <div className="userNameContainer">
-                <h3 className="nameUser">OMNI MIA</h3>
+                <h3 className="nameUser">{name}</h3>
             </div>
         </div>
     )
