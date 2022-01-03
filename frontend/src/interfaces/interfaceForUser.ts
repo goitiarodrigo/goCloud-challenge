@@ -24,3 +24,16 @@ export const initialState = {
     id: "",
     token: ""
 }
+
+export type calls = {
+    telephoneNumber: ""
+    date: "",
+    hour: "",
+    callDuration: "",
+    status: "",
+    step: "",
+    userId: "",
+    secondsForDate: number,
+    secondsForDuration: number,
+}[]
+    

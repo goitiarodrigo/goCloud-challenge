@@ -8,7 +8,7 @@ interface props {
     children: JSX.Element | JSX.Element[]
 }
 
-const URL = "http://omni-gocloud.herokuapp.com/api"
+const URL = "http://localhost:4000/api"
 
 export const UserProvider = ({children}: props) => {
 
@@ -26,7 +26,6 @@ export const UserProvider = ({children}: props) => {
 
     const getCalls = async (id: string): Promise<propsCall> => {
         let res = await axios.get(`${URL}/call/${id}`)
-        
         return res.data
     }
 

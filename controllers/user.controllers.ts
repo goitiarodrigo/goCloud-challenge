@@ -51,7 +51,6 @@ const userControllers = {
 
             user.authenticateUser(authDetails, {
                 onSuccess:  (data) => {
-                    console.log(data)
                 res.json({success: true, response: {dataUser: {token: data.getIdToken().getJwtToken(), email: data.getIdToken().payload.email, id: data.getIdToken().payload.aud}}})},
                 onFailure: async (err) => {
                     let error: {code: "", name: "", message: ""} = await err
@@ -93,8 +92,8 @@ const userControllers = {
     getCallByUser: async (req: Request, res: Response) => {
         try {
             let callsByUser = await Call.find({userId: req.params.id})
-            if (!callsByUser) throw new Error ("Este usuario no tiene llamadas para mostrar")
-            res.json({sucess: true, response: {callsByUser, ok: "it's okey"}})
+            if (!callsByUser.length) throw new Error ("Este usuario no tiene llamadas para mostrar")
+            res.json({sucess: true, response: callsByUser})
         }catch(error: any) {
             res.json({success: false, response: error.message})
         }

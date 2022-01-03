@@ -64,7 +64,7 @@ div.formContainer > div:nth-child(1) {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  width: 30%;
+  width: 35rem;
   height: 80%;
 }
 
@@ -111,11 +111,21 @@ div.divToInput {
 }
 
 div.divToInputError {
-  border: 2px solid #CB1A35;
+  width: 100%!important;
+  height: 38px;
+  margin-left: 10px;
+  border: 1px solid #CB1A35;
 }
 
 div.divToInputOk {
-  border: 2px solid #00C5C8;
+  width: 100%!important;
+  height: 38px;
+  margin-left: 10px;
+  border: 1px solid #00C5C8;
+}
+
+.checkForInput .cls-2 {
+  fill: white;
 }
 
 .error {
@@ -132,12 +142,12 @@ div.divToInputOk {
   padding: 2px;
 }
 
-.noError {
+.notError {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #00C5C8;
-  position:sticky;
+  position: relative;
   left: 92%;
   bottom: 2rem;
   border-radius: 100px;
@@ -153,9 +163,7 @@ div.inputContainer input {
   padding-left: 20px;
   padding-right: 20px;
   font-size: 12px;
-  font-weight: 500;
   outline: none;
-  z-index: 100000;
 }
 
 button.buttonLogin {
@@ -175,52 +183,69 @@ button.buttonLogin {
 /* STYLES FOR TABLE */
 
 
-div .container {
+div.tableContainer {
   width: 100vw;
-  height: 93vh;
+  height: 55vh;
+  max-height: 52vh;
+  overflow-y: scroll;
   display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
-div .highscoreContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 50%;
-  height: 60%;
-}
 
-table {
-  border-collapse:collapse;
-}
-
-.highScore {
-  border: 3px solid #F2A20C;
+table.highScore {
   width: 100%;
   height: 80%;
-  border-radius: 5px;
   text-align: center;
-  box-shadow: 0px 0px 24px 0px rgba(0,0,0,0.75);
-  -webkit-box-shadow: 0px 0px 24px 0px rgba(0,0,0,0.75);
-  -moz-box-shadow: 0px 0px 24px 0px rgba(0,0,0,0.75);
+  border-collapse:collapse;
+  margin: 0 1.5rem 0 1.5rem;
+  border-bottom: 1px solid #8E9099;
 }
 
-.highScore thead {
-  background-color: #A64D2D;
+table.highScore thead {
+  background-color: #C2C9F2;
+  color: white;
+  letter-spacing: 0.5px;
+  font-size: 16px;
+  height: 5vh;
 }
 
-.highScore tbody {
-  background-color: #F2A20C;
+table.highScore > thead > tr > th:nth-child(1) {
+  border-bottom-left-radius: 12.5px;
+  border-top-left-radius: 12.5px;
+  align-self: center;
 }
 
-.highScore tbody tr:hover {
-  background-color: #F28E13;
+table.highScore > thead > tr > th:last-child {
+  border-bottom-right-radius: 12.5px;
+  border-top-right-radius: 12.5px;
+}
+
+
+
+table.highScore tbody tr {
+  border-bottom: 3.5rem solid transparent;
+  border-top: 2rem solid transparent;
+  color: gray;
+}
+
+.tableContainer::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background-color: transparent;
+}
+
+.tableContainer::-webkit-scrollbar {
+  width: 12px;
+  background-color: transparent;
+}
+
+.tableContainer::-webkit-scrollbar-thumb {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: #C2C9F2;
 }
 
 
 /* STYLES FOR DETAILS CAMPAIGNS  */
+
 
 .checkSvg .cls-2 {
   fill: #C4C6EA;
@@ -240,6 +265,7 @@ div.detailCampaignContainer {
   flex-direction: column;
   justify-content: space-between;
   padding-top: 1rem;
+  margin-bottom: 1.7rem;
 }
 
 div.detailCampaignContainer > div:nth-child(1) {
@@ -375,6 +401,45 @@ div.campaignsContainer > div > div {
 
 .underline-7 {
   border: 4px solid #F70C7B
+}
+
+div.arrowsContainer {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+div.left-rightArrows {
+  display: flex;
+  justify-content: space-between;
+  width: 4.5%;
+  margin-right: 1.5rem;
+}
+
+.arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #8B51E9;
+  border-radius: 100px;
+  width: 35px!important;
+  height: 35px!important;
+  padding: 2px;
+  cursor: pointer;
+  border: none;
+}
+
+.arrowDisabled {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #8E9099;
+  border-radius: 100px;
+  width: 35px!important;
+  height: 35px!important;
+  padding: 2px;
+  cursor: pointer;
+  border: none;
 }
 
 

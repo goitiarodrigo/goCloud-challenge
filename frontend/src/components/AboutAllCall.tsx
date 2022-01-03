@@ -5,11 +5,23 @@ import { ReactComponent as Waiting } from "../assets/gc-icon_waiting.svg"
 import { ReactComponent as Phone } from "../assets/gc-icon_phone.svg"
 import { ReactComponent as Error } from "../assets/gc-icon_close.svg"
 import { ReactComponent as Time } from "../assets/gc-icon_time.svg"
+import { calls } from "../interfaces/interfaceForUser"
+import moment from "moment"
+moment.locale("es")
 
-const AboutAllCalls= () => {
+type props = {
+    calls: calls
+}
+
+const AboutAllCalls= ({calls} : props) => {
 
 
+    let calls_started = calls.filter(call => call.status !== "" && call.status === "Iniciada")
+    let notStartedCalls = calls.length - calls_started.length
+    let totalConsumption = 0 
+    calls.forEach(call => totalConsumption += parseInt(call.callDuration))
 
+    
     return (
         <div className="detailCampaignContainer">
             <div>
@@ -18,16 +30,15 @@ const AboutAllCalls= () => {
                     <span className="campaignTitle">Nombre de la campaña</span>
                     <div className="averageContain">
                         <h4>Progreso discado: <span>00 % </span> </h4>
-                        <h4>Consumo total: <span> 00:00 min </span> </h4>
-                        <h4>Duración promedio llamada: <span> 00 seg </span> </h4>
+                        <h4>Consumo total: <span> {moment(totalConsumption*1000).format("mm:ss")} min </span> </h4>
+                        <h4>Duración promedio llamada: <span> {Math.floor(totalConsumption/calls.length)}seg </span> </h4>
                     </div>
                 </div>
             </div>
             <div className="campaignsContainer">
                 <div className="detailsContainer">
                     <span className="quantityNumber-1">
-                        00
-
+                        16
                     </span>
                     <p>Transferidos</p>
                     <DownArrow height={17} width={17} style={{alignSelf: "center"}}  fill="#C4C6EA"/>
@@ -38,7 +49,7 @@ const AboutAllCalls= () => {
                 </div>
                 <div className="detailsContainer">
                     <span className="quantityNumber-2">
-                        00
+                    {calls_started.length}
 
                     </span>
                     <p>Iniciadas</p>
@@ -50,7 +61,7 @@ const AboutAllCalls= () => {
                 </div>
                 <div className="detailsContainer">
                     <span className="quantityNumber-3">
-                        00
+                        {calls.length}
 
                     </span>
                     <p>Discadas</p>
@@ -62,7 +73,7 @@ const AboutAllCalls= () => {
                 </div>
                 <div className="detailsContainer">
                     <span className="quantityNumber-4">
-                        00
+                        {notStartedCalls}
 
                     </span>
                     <p>No iniciadas</p>
@@ -74,7 +85,7 @@ const AboutAllCalls= () => {
                 </div>
                 <div className="detailsContainer">
                     <span className="quantityNumber-5">
-                        00
+                        {calls.length}
 
                     </span>
                     <p>Números</p>
@@ -86,7 +97,7 @@ const AboutAllCalls= () => {
                 </div>
                 <div className="detailsContainer">
                     <span className="quantityNumber-6">
-                        00
+                        0
 
                     </span>
                     <p>Fallidas</p>
@@ -98,7 +109,7 @@ const AboutAllCalls= () => {
                 </div>
                 <div className="detailsContainer">
                     <span className="quantityNumber-7">
-                        00
+                        10
 
                     </span>
                     <p>Compromiso pago</p>
