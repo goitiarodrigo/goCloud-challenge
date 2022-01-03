@@ -1,8 +1,8 @@
 import { createContext } from "react";
-import { propsCall, user } from "../interfaces/interfaceForUser";
+import { user } from "../interfaces/interfaceForUser";
 
 interface functionsForUsers {
-    signIn: (user: user) => object
+    signIn: (user: user) => Promise<any>
     getCalls: (id: string) => Promise<any>
     logOut: () => void
     userState: user

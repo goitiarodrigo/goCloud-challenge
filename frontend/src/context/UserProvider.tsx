@@ -15,9 +15,13 @@ export const UserProvider = ({children}: props) => {
     const [userState, dispatch] = useReducer(userReducer, initialState)
 
     const signIn = async (userLogged: user) => {
-        let res = await axios.post(`${URL}/login`, userLogged)
-        if (res.data.success) dispatch({type: "LOGIN", payload: res.data.response})
-        return res.data
+        try {
+            let res = await axios.post(`${URL}/login`, userLogged)
+            if (res.data.success) dispatch({type: "LOGIN", payload: res.data.response})
+            return res.data
+        }catch(error: any) {
+            return error.message
+        }
     }
 
     const logOut = () => {
@@ -26,6 +30,7 @@ export const UserProvider = ({children}: props) => {
 
     const getCalls = async (id: string): Promise<propsCall> => {
         let res = await axios.get(`${URL}/call/${id}`)
+        
         return res.data
     }
 

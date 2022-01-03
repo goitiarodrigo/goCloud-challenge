@@ -21,7 +21,7 @@ const AboutAllCalls= ({calls} : props) => {
     let totalConsumption = 0 
     calls.forEach(call => totalConsumption += parseInt(call.callDuration))
 
-    
+
     return (
         <div className="detailCampaignContainer">
             <div>
@@ -29,7 +29,7 @@ const AboutAllCalls= ({calls} : props) => {
                 <div className="campaignAverageContainer">
                     <span className="campaignTitle">Nombre de la campaña</span>
                     <div className="averageContain">
-                        <h4>Progreso discado: <span>00 % </span> </h4>
+                        <h4>Progreso discado: <span>100% </span> </h4>
                         <h4>Consumo total: <span> {moment(totalConsumption*1000).format("mm:ss")} min </span> </h4>
                         <h4>Duración promedio llamada: <span> {Math.floor(totalConsumption/calls.length)}seg </span> </h4>
                     </div>

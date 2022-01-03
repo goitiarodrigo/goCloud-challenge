@@ -11,10 +11,10 @@ const Header = () => {
         <div>
             <div className="headerContainer">
                 <ReactLogo width={100} height={100} fill="white"/>
-                <ReactLogOut  className="logoutSvg" onClick={logOut}/>
+                <ReactLogOut  className="logoutSvg" onClick={logOut} style={{cursor: "pointer"}}/>
             </div>
             <div className="userNameContainer">
-                <h3>OMNI MIA</h3>
+                <h3 className="nameUser">OMNI MIA</h3>
             </div>
         </div>
     )

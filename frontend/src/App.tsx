@@ -15,8 +15,8 @@ const App = () => {
   return (
       <Routes>
         {!token ? <Route path="login" element={<Login />} /> : null}
-        {token ? <Route path="details" element={<CallsDetails />} /> : null}
-        <Route path="*" element={<Navigate to={!token ? "login" : "details"} />} />
+        {token ? <Route path="/" element={<CallsDetails />} /> : null}
+        <Route path="*" element={<Navigate to={!token ? "login" : "/"} />} />
       </Routes>
   );
 }
