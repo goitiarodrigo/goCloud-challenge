@@ -41,7 +41,6 @@ const useForm = () => {
     const handleLogUser = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         let res = await signIn(logUser)
-        console.log(res)
         if (!res.success) {
             setClassForInput({...classForInput, email: "divToInputError", password: "divToInputError"})
             setError(true)
